@@ -8,11 +8,11 @@ public class Light extends Part{
         this.resistance = 10;
     }
 
-    @Override
+    //@Override
     public void get(float value) {
         //if(value>min){
             System.out.println("light "+ value);
        // }
-        super.get(value);
+        //super.get(value);
     }
 }
