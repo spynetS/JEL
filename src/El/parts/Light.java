@@ -1,18 +1,21 @@
 package El.parts;
 
-public class Light extends Part{
+public class Light extends Resistor {
 
     public float min = 2;
 
     public Light(){
         this.resistance = 10;
     }
+    public Light(float resistance){
+        this.resistance = resistance;
+    }
 
-    //@Override
-    public void get(float value) {
-        //if(value>min){
-            System.out.println("light "+ value);
-       // }
-        //super.get(value);
+    @Override
+    public void send(float u, float i) {
+        System.out.println("my i "+i);
+
+        super.send(u, i);
+        System.out.println(this.u);
     }
 }
