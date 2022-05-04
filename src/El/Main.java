@@ -5,7 +5,15 @@ import El.parts.Battery;
 import El.parts.Light;
 import El.parts.Part;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Main {
+
+    /*
+        When a
+     */
+
 
     public static void main(String[] args){
         Battery b = new Battery();
@@ -25,7 +33,11 @@ public class Main {
         res4.connect(b);
 
         b.sendResistence();
-        System.out.println(SomeMaths.getParallel(20,30));
+        ArrayList<Float> f = new ArrayList<>();
+        f.add(20f);
+        f.add(30f);
+        f.add(30f);
+        //System.out.println(SomeMaths.getParallel(f));
     }
 
 }
