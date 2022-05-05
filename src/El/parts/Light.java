@@ -12,10 +12,8 @@ public class Light extends Resistor {
     }
 
     @Override
-    public void send(float u, float i) {
-        System.out.println("my i "+i);
+    public void send(float bu, float bi,float u, float i) {
+        super.send(u, i,u,i);
 
-        super.send(u, i);
-        System.out.println(this.u);
     }
 }

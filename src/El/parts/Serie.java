@@ -2,6 +2,8 @@ package El.parts;
 
 import El.parts.basic.Part;
 
+import java.util.Objects;
+
 public class Serie extends Part {
 
     Resistor input = new Resistor();
@@ -13,10 +15,19 @@ public class Serie extends Part {
     }
 
     @Override
-    public void send(float u,float i) {
+    public void send(float bu,float bi,float u, float i) {
         for(Resistor r : parts){
-            r.send(i*getResistance(),i);
-            //wrong u
+            float U = i*r.getResistance();
+
+            r.send(bu,bi,U,i);
+        }
+    }
+
+    @Override
+    protected void print() {
+        for(Resistor r : parts){
+            r.print();
+            System.out.print("-");
         }
     }
 

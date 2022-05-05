@@ -4,6 +4,7 @@ import El.parts.basic.Part;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
 public class Parallel extends Part {
 
@@ -29,12 +30,24 @@ public class Parallel extends Part {
     }
 
     @Override
-    public void send(float u,float i){
+    public void send(float bu,float bi,float u, float i){
         for(Resistor r : parts){
-            r.send(u,u/r.getResistance());
+            //u=i*R
+            //I=u/r
+            //r=u/i
+            float U = i*getResistance();
+            float I = U/r.getResistance();
+            r.send(bu,bi,U,I);
         }
     }
-
+    @Override
+    protected void print() {
+        for(Resistor r : parts){
+            System.out.print("|");
+            r.print();
+            System.out.println();
+        }
+    }
     @Override
     public float getResistance(){
         float base = parts.get(0).getResistance();

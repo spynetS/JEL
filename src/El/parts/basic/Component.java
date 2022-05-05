@@ -23,8 +23,10 @@ public class Component {
     }
 
 
-    public void send(float u,float i) {
+    public void send(float bu,float bi,float u, float i) {
     }
 
 
+    protected void print() {
+    }
 }
