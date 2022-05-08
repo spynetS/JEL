@@ -1,13 +1,10 @@
-package El.parts;
+package El.parts.basic;
 
-import El.parts.basic.Part;
-
-import java.util.ArrayList;
 import java.util.Random;
 
-public class Resistor extends El.parts.Component {
+public class Resistor extends El.parts.basic.Component {
 
-    float resistance = 1; //ohm
+    protected float resistance = 1; //ohm
     public float id;
     public float i;
     public String name="resistor";
@@ -30,7 +27,7 @@ public class Resistor extends El.parts.Component {
     }
 
     @Override
-    protected void print() {
+    public void print() {
         System.out.print("<"+getResistance()+">");
     }
 

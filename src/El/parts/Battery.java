@@ -1,8 +1,6 @@
 package El.parts;
 
-import El.Utils.ResistorPacket;
-
-import java.util.ArrayList;
+import El.parts.basic.Resistor;
 
 public class Battery extends Resistor {
 
@@ -16,7 +14,7 @@ public class Battery extends Resistor {
     public Battery(){
     }
     public float sendResistence(){
-        return (((Resistor)outputs).getResistance());
+        return (((Resistor)output).getResistance());
     }
 
 
@@ -25,10 +23,10 @@ public class Battery extends Resistor {
         float i=u/restot;
         System.out.println(i);
         System.out.println(restot);
-        outputs.send(u,i,u,i);
+        output.send(u,i,u,i);
     }
 
     public void print() {
-        outputs.print();
+        output.print();
     }
 }

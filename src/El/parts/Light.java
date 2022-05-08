@@ -1,5 +1,7 @@
 package El.parts;
 
+import El.parts.basic.Resistor;
+
 public class Light extends Resistor {
 
     public float min = 2;
@@ -13,7 +15,6 @@ public class Light extends Resistor {
 
     @Override
     public void send(float bu, float bi,float u, float i) {
-        super.send(u, i,u,i);
-
+        System.out.println("Im lighting I="+i+"; u="+u);
     }
 }

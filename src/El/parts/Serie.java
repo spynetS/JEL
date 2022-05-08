@@ -1,8 +1,8 @@
 package El.parts;
 
 import El.parts.basic.Part;
+import El.parts.basic.Resistor;
 
-import java.util.Objects;
 
 public class Serie extends Part {
 
@@ -24,7 +24,7 @@ public class Serie extends Part {
     }
 
     @Override
-    protected void print() {
+    public void print() {
         for(Resistor r : parts){
             r.print();
             System.out.print("-");

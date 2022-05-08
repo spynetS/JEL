@@ -1,10 +1,9 @@
 package El.parts;
 
 import El.parts.basic.Part;
+import El.parts.basic.Resistor;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Objects;
 
 public class Parallel extends Part {
 
@@ -41,7 +40,7 @@ public class Parallel extends Part {
         }
     }
     @Override
-    protected void print() {
+    public void print() {
         for(Resistor r : parts){
             System.out.print("|");
             r.print();

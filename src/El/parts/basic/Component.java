@@ -1,8 +1,6 @@
-package El.parts;
+package El.parts.basic;
 
-import El.parts.basic.Part;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Component {
@@ -13,20 +11,18 @@ public class Component {
         id = new Random().nextFloat();
     }
 
-    public Component outputs;
+    public Component output;
     public Component inputs;
 
     public void connect(Component child){
-
-        outputs = (child);
+        output = (child);
         child.inputs=(this);
     }
-
-
-    public void send(float bu,float bi,float u, float i) {
+    public void disconnect(Component child){
+        output = (null);
+        child.inputs=(null);
     }
 
-
-    protected void print() {
-    }
+    public void send(float bu,float bi,float u, float i) {}
+    public void print() {}
 }
