@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JEl:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JEl_jar</output-path>
+    <root id="archive" name="JEl.jar">
+      <element id="module-output" name="JEl" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/JavaGameEngine.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,5 +1,6 @@
 package Gui;
 
+import JavaGameEngine.Components.Component;
 import JavaGameEngine.Components.GameObject;
 import JavaGameEngine.msc.Vector2;
 
@@ -7,11 +8,17 @@ import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
 public class Button extends GameObject {
-    public String text;
+
     public Button(String text, Vector2 pos){
         setPosition(pos);
         setScale(new Vector2(100,50));
-        this.text = text;
+        setLocalScale(new Vector2(100,50));
+        setColor(Color.MAGENTA);
+
+        Label label = new Label(text);
+        label.setColor(Color.white);
+        label.setLocalPosition(new Vector2(getScale().getX()/2,getScale().getY()/2));
+        addChild(label);
     }
 
     @Override
@@ -24,11 +31,18 @@ public class Button extends GameObject {
     }
     @Override
     public void draw(Graphics g) {
+
+        g.setColor(getColor());
         Graphics2D graphics2 = (Graphics2D) g;
         RoundRectangle2D roundedRectangle = new RoundRectangle2D.Float(getSpritePosition().getX(),getSpritePosition().getY(),getScale().getX(),getScale().getY(), 10, 10);
         graphics2.fill(roundedRectangle);
 
-        g.setColor(Color.white);
-        g.drawString(text, (int) getPosition().getX()-40, (int) getPosition().getY());
+        for(Component c : getChildren()){
+            c.draw(g);
+        }
+
+//        super.draw(g);
     }
 }
+
+
