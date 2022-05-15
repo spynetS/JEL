@@ -39,9 +39,19 @@ public class Main {
 */
 
         LightPanel s = new LightPanel();
+
+        Serie main = new Serie();
+
+        Parallel main2 = new Parallel();
+
+        main2.add(s);
+        main2.add(new Light(3));
+
+        main.add(main2);
+
         System.out.println(s.l3.output);
 
-        b.connect(s);
+        b.connect(main);
         b.send();
         //b.print();
 
@@ -51,7 +61,7 @@ public class Main {
         public Light l = new Light();
         public Light l1 = new Light();
         public Light l2 = new Light();
-        public Light l3 = new Light();
+        public Light l3 = new Light(3);
 
         public LightPanel(){
 
