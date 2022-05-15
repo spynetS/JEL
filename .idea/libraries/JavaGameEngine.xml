@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JavaGameEngine">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JavaGameEngine.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
